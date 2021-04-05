@@ -5,23 +5,28 @@
 #include "frame.h"
 #include "screen.h"
 #include "tile.h"
+#include "controls.h"
+#include "hero.h"
 
 
 void setup(){
   
 initScreen();
+initControls();
 
 }
 
 void loop(){
 
 
-checkFrame();
+//checkFrame();
 
 //screenTest();
-
-drawLevel(0);
-
+//drawLevel(0);
+drawHero();
 tft.updateScreen();
+
+getControls();
+
 
 }

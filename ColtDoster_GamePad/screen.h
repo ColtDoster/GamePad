@@ -36,14 +36,14 @@ void initScreen(){  //INITIALOZES THE SCREEN
 
   tft.fillScreen(ILI9341_BLACK);      // Clear Screen
 
-  color = false;
+  color = false;  // set to false so that way screen comes in black
 }
 
 void screenTest(){
 
   if(screenTimer1.check()){
-color = !color;
-}
+    color = !color;
+  }
 
 if(color){
   tft.fillScreen(ILI9341_WHITE); // Clear Screen

@@ -29,7 +29,7 @@ Metro screenTimer1 = Metro(screenTime1); // A prototype for a Metro timer
 
 void initScreen(){  //INITIALOZES THE SCREEN
  tft.begin();                            // Connect to LCD Screen
-  tft.setRotation(1);                   // Rotate Screen 90 Degrees
+  tft.setRotation(3);                   // Rotate Screen 90 Degrees
   
   tft.setFrameBuffer(screenBuffer);   // Initialize Frame Buffer
   tft.useFrameBuffer(1);                // Use Frame Buffer

@@ -49,7 +49,7 @@ if(heroFrameTimer.check()){
 }
 
 
- tft.setClipRect((heroX-10), (heroY - 10), 45, 45);
+ tft.setClipRect((heroX-5), (heroY - 5), 45, 45);
 
  tft.drawRGBBitmap(heroX,heroY,BerryBoy_PIX[heroFrame],BerryBoy_MASK[heroFrame],heroSize,heroSize);
 

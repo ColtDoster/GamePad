@@ -51,12 +51,15 @@ void secondLevel(){
     tft.setClipRect(0,0,screenW,screenH);
     heroX = 160;
     heroY = 220;
+    enemyX = 160;
+    enemyY = 120;
     drawLevel(1);
     tft.updateScreen();
     initLevel2 = true;
     }
   drawLevel(1);
   statusBar(healthX, healthY, healthW, healthH);
+  drawEnemy();
   drawHero();
     if(interaction[curMode][curTile] == 0x02 && buttonBuffer[0] == 1){
     curMode = 2;
@@ -70,12 +73,15 @@ void thirdLevel(){
     tft.setClipRect(0,0,screenW,screenH);
     heroX = 160;
     heroY = 2;
+    enemyX = 50;
+    enemyY = 120;
     drawLevel(2);
     tft.updateScreen();
     initLevel3 = true;
     }
   drawLevel(2);
   statusBar(healthX, healthY, healthW, healthH);
+  drawEnemy();
   drawHero();
     if(interaction[curMode][curTile] == 0x03 && buttonBuffer[0] == 1){
     curMode = 1;
@@ -92,12 +98,15 @@ void fourthLevel(){
     tft.setClipRect(0,0,screenW,screenH);
     heroX = 300;
     heroY = 120;
+    enemyX = 160;
+    enemyY = 120;
     drawLevel(3);
     tft.updateScreen();
     initLevel4 = true;
     }
   drawLevel(3);
   statusBar(healthX, healthY, healthW, healthH);
+  drawEnemy();
   drawHero();
     if(interaction[curMode][curTile] == 0x05 && buttonBuffer[0] == 1){
     curMode = 4;
@@ -111,12 +120,15 @@ void fifthLevel(){
     tft.setClipRect(0,0,screenW,screenH);
     heroX = 20;
     heroY = 120;
+    enemyX = 270;
+    enemyY = 120;
     drawLevel(4);
     tft.updateScreen();
     initLevel5 = true;
     }
   drawLevel(4);
   statusBar(healthX, healthY, healthW, healthH);
+  drawEnemy();
   drawHero();
     if(interaction[curMode][curTile] == 0x07 && buttonBuffer[0] == 1){
     curMode = 5;
@@ -129,12 +141,15 @@ void sixthLevel(){
     tft.setClipRect(0,0,screenW,screenH);
     heroX = 160;
     heroY = 220;
+    enemyX = 160;
+    enemyY = 120;
     drawLevel(5);
     tft.updateScreen();
     initLevel6 = true;
     }
   drawLevel(5);
   statusBar(healthX, healthY, healthW, healthH);
+  drawEnemy();
   drawHero();
     if(interaction[curMode][curTile] == 0x09 && buttonBuffer[0] == 1){
     curMode = 4;

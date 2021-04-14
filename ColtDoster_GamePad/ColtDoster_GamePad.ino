@@ -11,6 +11,7 @@ int curMode = -1;
 #include "interaction.h"
 #include "status.h" 
 #include "hero.h"
+#include "enemy.h"
 #include "modes.h"
 
 
@@ -27,7 +28,7 @@ void loop(){
 
 getControls();
 runMode();
-//checkFrame();
+checkFrame();
 
 
 }

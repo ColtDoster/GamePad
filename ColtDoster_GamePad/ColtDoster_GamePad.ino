@@ -12,10 +12,13 @@ int curMode = -1;
 #include "status.h" 
 #include "hero.h"
 #include "enemy.h"
+#include "fight.h"
 #include "modes.h"
 
 
 void setup(){
+
+  randomSeed(analogRead(A9));
   
 initScreen();
 initControls();

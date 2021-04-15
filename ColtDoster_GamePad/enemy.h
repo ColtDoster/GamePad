@@ -9,9 +9,10 @@ Metro enemyBrainTimer = Metro(enemyBrainTime); // A prototype for a Metro timer
 
 //
 int enemyMargin = 1; // margin for drawing clip around enemty
-int enemyStatus = 1; // keeps track of if enemy is active or not
+boolean enemyStatus; // keeps track of if enemy is alive or not
+boolean punch = false; // says whether the enemy is punching or not
 int enemyType = 0;  // which type of enemy it is
-int enemyHealth = 1; // keeps track of health of enemy
+int enemyHealth = 3; // keeps track of health of enemy
 int enemySmart = 3; // how smart is the enemy
 
 float enemyX = 0; // x position of the enemy
@@ -64,10 +65,26 @@ if(enemyFrameTimer.check()){
   else{enemyFrame = 0; }
 }
 
+if(enemyXDir == 1 && buttonBuffer[1] == 1){
+  enemyFrame = 10;
+}
+if(enemyYDir == 1 && buttonBuffer[1] == 1){
+  enemyFrame = 10;
+}
+if(enemyXDir == -1 && buttonBuffer[1] == 1){
+  enemyFrame = 5;
+}
+if(enemyYDir == -1 && buttonBuffer[1] == 1){
+  enemyFrame = 5;
+}
+
+if(enemyStatus){
+
 tft.setClipRect((enemyX - 5), (enemyY - 5), enemyW + 10, enemyH + 10);
 drawLevel(curMode);
 tft.drawRGBBitmap(enemyX,enemyY,AdminThugs_PIX[enemyFrame],AdminThugs_MASK[enemyFrame],enemyW,enemyH);
 
 tft.updateScreen();
+}
   
 }

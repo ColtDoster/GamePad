@@ -125,6 +125,7 @@ int curTile;
 int curTileX;
 int curTileY;
 
+
 void initNeighbors(){
   for (int i = 0; i < tileW * tileH; i++){
     // General Rule

@@ -44,9 +44,18 @@ if(checkMove(curMode, nextX, nextY, heroSize, heroSize) == true){
 
 if(heroFrameTimer.check()){
   if(heroDir == -1){heroFrame = 1 + (heroFrame + 1) % 3;}
-  else if(heroDir == 1){heroFrame = 7 + (heroFrame + 1) % 3;}
+  else if(heroDir == 1){heroFrame = 6 + (heroFrame + 1) % 3;}
   else{heroFrame = 0; }
 }
+
+if(heroDir == 1 && buttonBuffer[1] == 1){
+  heroFrame = 9;
+} else if(heroDir == -1 && buttonBuffer[1] == 1){
+  heroFrame = 4;
+} else if(heroDir == 0 && buttonBuffer[1] ==1){
+  heroFrame = 4;
+}
+
 
 
  tft.setClipRect((heroX-5), (heroY - 5), 45, 45);

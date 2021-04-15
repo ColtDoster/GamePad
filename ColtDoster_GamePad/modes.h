@@ -35,6 +35,7 @@ void firstLevel(){
     drawLevel(0);
     tft.updateScreen();
     initLevel1 = true;
+    //enemyStatus = true;
     }
   drawLevel(0);
   statusBar(healthX, healthY, healthW, healthH);
@@ -54,11 +55,14 @@ void secondLevel(){
     enemyX = 160;
     enemyY = 120;
     drawLevel(1);
+    enemyStatus = true;
+    enemyHealth = 3;
     tft.updateScreen();
     initLevel2 = true;
     }
   drawLevel(1);
   statusBar(healthX, healthY, healthW, healthH);
+  fight();
   drawEnemy();
   drawHero();
     if(interaction[curMode][curTile] == 0x02 && buttonBuffer[0] == 1){
@@ -76,11 +80,14 @@ void thirdLevel(){
     enemyX = 50;
     enemyY = 120;
     drawLevel(2);
+    enemyStatus = true;
+    enemyHealth = 3;
     tft.updateScreen();
     initLevel3 = true;
     }
   drawLevel(2);
   statusBar(healthX, healthY, healthW, healthH);
+  fight();
   drawEnemy();
   drawHero();
     if(interaction[curMode][curTile] == 0x03 && buttonBuffer[0] == 1){
@@ -101,11 +108,14 @@ void fourthLevel(){
     enemyX = 160;
     enemyY = 120;
     drawLevel(3);
+    enemyStatus = true;
+    enemyHealth = 3;
     tft.updateScreen();
     initLevel4 = true;
     }
   drawLevel(3);
   statusBar(healthX, healthY, healthW, healthH);
+  fight();
   drawEnemy();
   drawHero();
     if(interaction[curMode][curTile] == 0x05 && buttonBuffer[0] == 1){
@@ -122,12 +132,15 @@ void fifthLevel(){
     heroY = 120;
     enemyX = 270;
     enemyY = 120;
+    enemyStatus = true;
+    enemyHealth = 3;
     drawLevel(4);
     tft.updateScreen();
     initLevel5 = true;
     }
   drawLevel(4);
   statusBar(healthX, healthY, healthW, healthH);
+  fight();
   drawEnemy();
   drawHero();
     if(interaction[curMode][curTile] == 0x07 && buttonBuffer[0] == 1){
@@ -143,12 +156,15 @@ void sixthLevel(){
     heroY = 220;
     enemyX = 160;
     enemyY = 120;
+    enemyStatus = true;
+    enemyHealth = 3;
     drawLevel(5);
     tft.updateScreen();
     initLevel6 = true;
     }
   drawLevel(5);
   statusBar(healthX, healthY, healthW, healthH);
+  fight();
   drawEnemy();
   drawHero();
     if(interaction[curMode][curTile] == 0x09 && buttonBuffer[0] == 1){

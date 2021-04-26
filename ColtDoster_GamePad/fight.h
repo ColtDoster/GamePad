@@ -16,27 +16,58 @@ void fight(){
 
   boolean canFight = checkCollide(heroX, heroY, heroSize, heroSize, enemyX, enemyY, enemyW, enemyH);
 
-  if(enemyStatus){
+if(enemyStatus){
   if(canFight){
     if(buttonBuffer[1] == 1){
       enemyHealth -=1;
       if(enemyHealth ==0){
         enemyStatus = false;
-        tft.setClipRect(0,0,screenW,screenH);
+        tft.setClipRect(0,0,screenW,screenH); 
         drawLevel(curMode);
+        statusDrawn = false;
+        statusBar(healthX, healthY, healthW, healthH);
         tft.updateScreen();
       }
+
+    } 
+
+    if(enemyType == 0){
+      if(random(100) ==  0){
+      punch = true;
+      healthX +=5;
+      heroHealth -=5;
+      healthW -=5;
+      tft.setClipRect(0,0,screenW,screenH);
+      drawLevel(curMode);
+      statusDrawn = false;
+      statusBar(healthX, healthY, healthW, healthH);
+      tft.updateScreen();
+      punch = false;
+      }
     }
-    
-    if(random(100) ==  0){
-      //punch = true;
+    else  if(enemyType == 1){
+      if(random(100) ==  0){
+      punch = true;
       healthX +=10;
+      heroHealth -=10;
       healthW -=10;
-     // punch = false;
+      tft.setClipRect(0,0,screenW,screenH);
+      drawLevel(curMode);
+      statusDrawn = false;
+      statusBar(healthX, healthY, healthW, healthH);
+      tft.updateScreen();
+      punch = false;
+      }
     }
-  }
+
+    
+  } 
+
   }
 
-
+if(heroHealth < 1){
+  death();
+  tft.updateScreen();
+}
   
 }

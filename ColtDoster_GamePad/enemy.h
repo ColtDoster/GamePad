@@ -1,8 +1,10 @@
 #include "AdminThugs_MASK.h"
 #include "AdminThugs_PIX.h"
+#include "Briggs_MASK.h"
+#include "Briggs_PIX.h"
 
 int enemyFrameTime = 250;
-int enemyBrainTime = 1000;
+int enemyBrainTime = 500;
 
 Metro enemyFrameTimer = Metro(enemyFrameTime); // A prototype for a Metro timer
 Metro enemyBrainTimer = Metro(enemyBrainTime); // A prototype for a Metro timer
@@ -60,31 +62,62 @@ if(checkMove(curMode, enemyNextX, enemyNextY, enemyW, enemyH) == true){
 }
 
 if(enemyFrameTimer.check()){
+  if(enemyType == 0){
   if(enemyXDir == -1 || enemyYDir == -1){enemyFrame = 1 + (enemyFrame + 1) % 3;}
   else if(enemyXDir == 1 || enemyYDir == 1){enemyFrame = 7 + (enemyFrame + 1) % 3;}
   else{enemyFrame = 0; }
+  }
+
+  else  if(enemyType == 1){
+  if(enemyXDir == -1 || enemyYDir == -1){enemyFrame = 1 + (enemyFrame + 1) % 3;}
+  else if(enemyXDir == 1 || enemyYDir == 1){enemyFrame = 6 + (enemyFrame + 1) % 3;}
+  else{enemyFrame = 0; }
+  }
 }
 
-if(enemyXDir == 1 && buttonBuffer[1] == 1){
+if(enemyXDir == 1 && punch == true){
+  if(enemyType == 0){
   enemyFrame = 10;
+  }
+  if(enemyType == 1){
+    enemyFrame = 9;
+  }
 }
-if(enemyYDir == 1 && buttonBuffer[1] == 1){
+if(enemyYDir == 1 && punch == true){
+  if(enemyType == 0){
   enemyFrame = 10;
+  }
+   if(enemyType == 1){
+    enemyFrame = 9;
+  }
 }
-if(enemyXDir == -1 && buttonBuffer[1] == 1){
+if(enemyXDir == -1 && punch == true){
   enemyFrame = 5;
 }
-if(enemyYDir == -1 && buttonBuffer[1] == 1){
+if(enemyYDir == -1 && punch == true){
   enemyFrame = 5;
 }
 
 if(enemyStatus){
 
+if(enemyType == 0){
 tft.setClipRect((enemyX - 5), (enemyY - 5), enemyW + 10, enemyH + 10);
 drawLevel(curMode);
 tft.drawRGBBitmap(enemyX,enemyY,AdminThugs_PIX[enemyFrame],AdminThugs_MASK[enemyFrame],enemyW,enemyH);
-
 tft.updateScreen();
 }
+
+ else if(enemyType  == 1){
+tft.setClipRect((enemyX - 5), (enemyY - 5), enemyW + 30, enemyH + 30);
+drawLevel(curMode);
+tft.drawRGBBitmap(enemyX,enemyY,Briggs_PIX[enemyFrame],Briggs_MASK[enemyFrame],48,48);
+tft.updateScreen();
+}
+
+
+
+}
+
+
   
 }

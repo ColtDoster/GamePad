@@ -14,6 +14,7 @@ int heroSize = 32;
 int heroDir = 0;
 int heroFrame = 0;
 int heroTime = 250;
+int heroHealth = 60;
 
 int healthX = 250;
 int healthY = 15;
